@@ -1,0 +1,70 @@
+1/Git结构
+-------------------------
+	工作区（写代码的地方）》add 》缓存区（暂时存放的地方）》本地库（存放历史数据的）
+	
+2/Git命令行操作
+----------------------------
+	1/初始化
+		mkdir 一个空的文件夹
+		cd 进入这个文件夹
+		git init 初始化命令
+		会在这个空的文件夹底下生成一个隐藏文件夹  就是.git文件夹
+	2/设置签名
+		需要设置用户名跟Email地址作为区分不同的开发人员，但是这个用户名跟Email并不是一定要合理的。也不需要跟gitlab上面的账号密码一致。
+		项目级别：项目级别只对当前项目有作用，  git config user.name jiegege		git config user.email jiegege@haoshuai.com   保存在.git/config里面
+		系统用户级别：而系统用户级别权力更大。  git config --global user.name jiegege		git config --global  user.email jiegege@haoshuai.com
+			就近原则：项目级别优于系统用户级别，两个都有的时候用项目级别，
+					  如果只有系统用户级别，就用系统用户级别，不允许两个都没有
+					  
+	3/相关操作
+		git status
+			on branch master	在master分支上
+			no commits yet	在仓库中还没有提交过东西
+			nothing to commit 没有需要提交的文件
+		当我复制一份文件进去或者新建一份文件时候：
+			最后一行变成untracked files 未追踪的文件 可以使用git add 添加到暂存区
+		使用git add
+			变成绿色的，然后最后一行是changes to be commit 改变可以commit了，可以使用git rm --cached files 撤回出暂存区，这个时候又变成红色的
+		使用git commit files
+			:set nu 查看行号
+			输入这更改的备注
+			：wq退出
+		git status
+			这时候会显示这次你更改的相关信息，比如行数等
+		再做一次修改，然后git add file    然后 git commit -m 'Git学习1109，第二次提交代码' Git1109.txt
+			git log --pretty=oneline
+			git log
+			git log --oneline
+			git reflog
+			以一种漂亮的形式显示出历史的信息来。HEAD->master代表的是当前指的版本
+			
+	4、前进后退
+		git reset --hard  file	回退三个区
+			soft	只回退本地仓库
+			mixed	回退本地仓库和缓存区
+		
+		如果对在暂存区的文件进行恢复
+			git reset --hard head
+			
+	5、比较文件
+		git diff 文件名		这样是比较和缓存区的文件的差异
+		git diff head 文件名	和本地库里面的文件进行比较 
+		
+	6、分支
+		git branch -v		查看分支
+		git branch 分支名	创建分支
+		git checkout 分支名	切换分支
+		git merge 分支名（要把这个分支名合并过来）
+		冲突的现象：
+			如果master和分支test都对同一行做了修改，git会帮你提示出来，打开源文件修改一下，成你满意的样子。
+			然后使用git add 文件名添加到缓存区。使用git commit -m 提交到本地库，注意这里不要再加文件名了。
+		
+	7、创建阿里云邮箱
+		heyunjie@aliyun.com
+		创建github账号yunjiehe
+		在本地创建一个目录，作为本地的仓库。同时github上也创建一个仓库
+		使用git remote add origin url地址添加别名
+		git push origin master	把本地的master分支push到远程仓库中去。
+	
+			
+		
