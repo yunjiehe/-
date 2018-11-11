@@ -65,6 +65,6 @@
 		在本地创建一个目录，作为本地的仓库。同时github上也创建一个仓库
 		使用git remote add origin url地址添加别名
 		git push origin master	把本地的master分支push到远程仓库中去。
-	
+	    
 			
 		
