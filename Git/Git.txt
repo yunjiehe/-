@@ -66,5 +66,8 @@
 		使用git remote add origin url地址添加别名
 		git push origin master	把本地的master分支push到远程仓库中去。
 	    
+	8、针对文件夹的操作
+		在一个文件夹中通过git add Java/ 方式直接把整个文件夹提交上去，同样commit也是一样的。然后再使用git push origin master传输到github上面去。
+		Git中一个项目，对应着自己电脑中的一个文件夹，当你在本地文件夹底下做任何的操作，上面也会与之对应
 			
 		
