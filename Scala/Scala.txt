@@ -8,4 +8,78 @@
 		
 2、编译环境
 --------------------------
+	1、直接下载scala，解压，配置环境变量
+	2、命令行输入scala，然后输入print("hello world")
+	3、使用记事本写hello world
+		object HelloWorld{
+			def main(args:Array[String]){
+				println("Hello world,I	love  scala!")
+			}
+		}
+	4、使用scalac HelloWorld.scala编译文件，同时会发现再这个文件夹下面生成了两个.class文件
+	5、使用scala HelloWorld运行这个程序
+	
+3、IDE开发环境搭建
+	1、安装JDK
+	2、安装IDEA
+	3、配置scala
+	4、安装IDEA的scala插件，版本要一致，并且安装
+
+4、变量
+	1、var 变量 = 初始化值		
+	   var 变量：数据类型 = 初始化值
+	   
+	2、val 常量 = 初始化值
+	   val 变量：数据类型 = 初始化值
+	   常量不可变
+	   val 修饰的变量类型是引用类型的时候引用不能改变，但是引用的内容可以改变
+	   val a1 = Array(1,2,3)
+	   val a2 = Array(3,4,5)
+	   a1 = a2 这样不行
+	   a1(0) = 10  第一个元素等于10，这样可以
+	   val 修饰的变量，还可以用lazy修饰，值只有在需要的时候才会赋值
+	   
+	3、数据类型和操作符
+		八个基本数据类型+unit	引用类型中特殊的几个
+		操作符：
+			没有++ -- 有+= -=
+			
+	4、表达式
+		if/else 表达式
+			val a = 1
+			val res = if(a>0) "sucess" else -100
+		块表达式
+			val res = {val a = 10 
+					   val b = 20
+						   a + b}
+	5、循环
+		for(i<- 表达式/数组/集合)
+		val res = "jiegege"
+		for(i <- 1 until res.length)println(res.charAt(i))
+	
+	6、方法
+		def 方法名（变量）:返回类型 = 方法体
+		def add(x:Int,y:Int) = x + y
+		add(10,2)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
